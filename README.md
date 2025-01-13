@@ -9,8 +9,6 @@
     <img src="./misc/logo.png" alt="mosaecdb" width="500">
 </p>
 
-# MOSAEC Database (v1.0.0-alpha)
-
 MOSAEC-DB is a database of metal-organic framework (MOF) and coordination polymer crystallographic information files (.cif) processed for atomistic simulations. 
 
 This repository collects information relating to the software applied during database construction, validation, and analysis.
