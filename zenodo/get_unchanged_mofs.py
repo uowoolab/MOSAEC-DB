@@ -133,12 +133,13 @@ if __name__ == "__main__":
         print("\nWriting MOSAEC-DB REPEAT cifs ...\n")
         repeat_dir = "MOSAEC-DB_unchanged_REPEAT"
         os.makedirs(repeat_dir, exist_ok=True)
-        rpt_json = os.path.join(CODE_PATH, "../database_REPEAT/unchanged_repeat.json")
+        rpt_json = os.path.join(CODE_PATH, "../misc_data/unchanged_repeat.json")
         assign_partial_atomic_charge(p1_dir, rpt_json, repeat_dir, pac_type="REPEAT")
 
     if args.write_mepoml:
         print("\nWriting MOSAEC-DB MEPO-ML cifs ...\n")
         mepoml_dir = "MOSAEC-DB_unchanged_MEPOML"
         os.makedirs(mepoml_dir, exist_ok=True)
-        mpml_json = os.path.join(CODE_PATH, "../database_MEPOML/unchanged_mepoml.json")
+        mpml_json = os.path.join(CODE_PATH, "../misc_data/unchanged_mepoml.json")
         assign_partial_atomic_charge(p1_dir, mpml_json, mepoml_dir, pac_type="MEPOML")
+

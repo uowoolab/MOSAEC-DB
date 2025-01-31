@@ -367,3 +367,4 @@ if __name__ == "__main__":
             main(final_cif_path, read_path=read_path, input_is_cif=inp_is_cif)
         else:
             main(final_cif_path, input_is_cif=inp_is_cif)
+

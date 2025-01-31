@@ -148,45 +148,49 @@ def assign_partial_atomic_charge(
         # Loop over all atoms and create info line for each of
         rand_num = np.array(charge_dict_i["rand_key"])
         # track number of matches
-        match_count = 0
-        for j, (symbol, label, frac) in enumerate(zip(symbols, labels, frac_xyz)):
-            # prev_line = charge_dict_i[str(j)]
-            pac_list_Z = charge_dict_i[symbol]
-            # iterate over all sites with shared atomic symbol to find match
-            # match_ind = None
-            # frac_sum = sum(frac)
-            frac_sum = sum(frac * rand_num)
-            for k, site_dict in enumerate(pac_list_Z):
-                # check X
-                if not floats_equal(frac[0], site_dict["x"]):
-                    continue
-                # check sum
-                # if not floats_equal(frac_sum, site_dict["sum"]):
-                if not floats_equal(frac_sum, site_dict["sum_rand"]):
-                    continue
-                # check label
-                if label != site_dict["label"]:
-                    label_mismatch[label] = site_dict["label"]
-                    label_order_issue = True
-                # select index that passes all checks
-                match_ind = k
-                break
-            # cleanup
-            if match_ind != None:
-                match_count += 1
-                charge = pac_list_Z[match_ind]["charge"]
-                # write line
-                new_cif += f"    {symbol:{symbol_width}}  {label:{label_width}}  "
-                new_cif += "{:.6f}  {:.6f}  {:.6f}  ".format(*frac) + f"{charge}\n"
-            else:
-                print(
-                    f"{cif_path} | ERROR | Did not find a matching atom site ... \n",
-                    label,
-                )
-                print(symbol, label, frac, frac_sum)
-                print(pac_list_Z)
-                write_cif = False
-                break
+        try:
+            match_count = 0
+            for j, (symbol, label, frac) in enumerate(zip(symbols, labels, frac_xyz)):
+                # prev_line = charge_dict_i[str(j)]
+                pac_list_Z = charge_dict_i[symbol]
+                # iterate over all sites with shared atomic symbol to find match
+                # match_ind = None
+                # frac_sum = sum(frac)
+                frac_sum = sum(frac * rand_num)
+                for k, site_dict in enumerate(pac_list_Z):
+                    # check X
+                    if not floats_equal(frac[0], site_dict["x"]):
+                        continue
+                    # check sum
+                    # if not floats_equal(frac_sum, site_dict["sum"]):
+                    if not floats_equal(frac_sum, site_dict["sum_rand"]):
+                        continue
+                    # check label
+                    if label != site_dict["label"]:
+                        label_mismatch[label] = site_dict["label"]
+                        label_order_issue = True
+                    # select index that passes all checks
+                    match_ind = k
+                    break
+                # cleanup
+                if match_ind != None:
+                    match_count += 1
+                    charge = pac_list_Z[match_ind]["charge"]
+                    # write line
+                    new_cif += f"    {symbol:{symbol_width}}  {label:{label_width}}  "
+                    new_cif += "{:.6f}  {:.6f}  {:.6f}  ".format(*frac) + f"{charge}\n"
+                else:
+                    print(
+                        f"{cif_path} | ERROR | Did not find a matching atom site ... \n",
+                        label,
+                    )
+                    print(symbol, label, frac, frac_sum)
+                    print(pac_list_Z)
+                    write_cif = False
+                    break
+        except Exception as e:
+            print(f"{cif_path} | ERROR | Issue assigning Charge", e)
+            continue
 
         if label_order_issue:
             print(
@@ -227,3 +231,4 @@ if __name__ == "__main__":
     )
     args = ap.parse_args()
     assign_partial_atomic_charge(args.cif, args.repeat_json, args.outdir, args.pac_type)
+
