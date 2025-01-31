@@ -1,9 +1,8 @@
-# MOSAEC Database (v1.0.0-alpha)
+# MOSAEC Database (v1.0.0-release)
 
-[![Zenodo](https://flat.badgen.net/static/ZENODO/10.5281%2Fzenodo.14025238/red/)](https://doi.org/10.5281/zenodo.14025238)
-[![PREPRINT](https://flat.badgen.net/static/PREPRINT/10.26434%2Fchemrxiv-2024-zmq13/nblue/)](https://doi.org/10.26434/chemrxiv-2024-zmq13)
-![Python](https://flat.badgen.net/static/Python/3.9%20|%203.11/green/)
-[![Formatter](https://flat.badgen.net/static/Code%20Format/black/black)](https://black.readthedocs.io/en/stable/)
+[![Zenodo](https://flat.badgen.net/static/Zenodo/10.5281%2Fzenodo.14025238/red/)](https://doi.org/10.5281/zenodo.14025238)
+[![Preprint](https://flat.badgen.net/static/Preprint/10.26434%2Fchemrxiv-2024-zmq13/nblue/)](https://doi.org/10.26434/chemrxiv-2024-zmq13)
+[![Article](https://flat.badgen.net/static/Article/10.1039%2Fd4sc07438f/nblue/)](https://doi.org/10.1039/d4sc07438f)
 
 <p align="center">
     <img src="../misc/logo.png" alt="mosaecdb" width="500">
@@ -12,14 +11,17 @@
 MOSAEC-DB consists of 124k+ metal-organic framework (MOF) and coordination polymer crystallographic information files (.cif) processed for atomistic simulations. This database contains solely experimental crystal structures derived from the Cambridge Structural Database (CSD) which have been processed by novel solvent removal (SAMOSA) and error analysis (MOSAEC) tools.
 
 ## Download
-The MOSAEC-DB files, including all publically-available crystal structures, scripts, and supplemental data, can be downloaded from the [zenodo](https://doi.org/10.5281/zenodo.14025238) repository.
+The MOSAEC-DB files, including all publicly-available crystal structures, file management scripts, and supplemental data, can be downloaded from the [zenodo](https://doi.org/10.5281/zenodo.14025238) record.
+
+Additional scripts used in the construction and analysis of MOSAEC-DB, as well as general database use information, are available in a [GitHub](https://github.com/uowoolab/MOSAEC-DB) repository. 
 
 ## Details
-All structures have been converted to 'P1' symmetry, and undergone solvent removal and structure validity verification using in-house codes. Links to these codes will be provided at a later date (subject to their publication).
 
-Broadly, the solvent removal and structure validty codes employ concept of metal oxidation states and ligand formal charges to establish proper solvent removal decision-making and identify potentially problematic crystal structures.
+All structures have been converted to 'P1' symmetry, and undergone solvent removal and structure validity verification using in-house codes.  Check the [GitHub](https://github.com/uowoolab/MOSAEC-DB) for the links to these codes when they become available.
 
-### Directory Stucture
+Broadly, the solvent removal and structure validity codes employ concept of metal oxidation states and ligand formal charges to establish proper solvent removal decision-making and identify potentially problematic crystal structures.
+
+### Directory Structure
 
 ```
 .
@@ -39,42 +41,48 @@ Broadly, the solvent removal and structure validty codes employ concept of metal
 │      ├── GEOM_mosaec-db.csv
 │      ├── PHOM_mosaec-db.csv
 │      └── RAC_mosaec-db.csv
+├── misc_data
+|      ├── PDD_duplicate_thresh0.15.csv
+│      ├── unchanged_mepoml.json 
+│      └── unchanged_repeat.json
 ├── scripts
 ├── subsets
-│      ├── sampling_details
+│      ├── details_sampling
 │      ├── diverse-neutral-*-20k.txt
 │      ├── diverse-charged-*-3k.txt
 │      ├── uniq-neutral-porous-2.4pld.txt
 │      └── uniq-neutral-porous-0.10vf.txt
 ├── mosaec-db.xlsx
 ├── mosaec-db.csv
-└── READme.md
+└── README.md
 ```
 
 Primary directories containing the crystal structures (.cif) are organized according to activation (i.e. full vs. partial activation) and framework charge (i.e. neutral vs. charged) states.Separate directories are provided for files containing precomputed partial atomic charges, namely those calculated via the DFT-derived REPEAT charges and the ML-predicted MEPO-ML charges.
 
-Subsets of MOSAEC-DB are arranged according to common conventions of porosity in prior databases, as well as a diverse sampling of several chemical and geometric descriptors (denoted as * in the directory structure). Sampling was achieved using [farthest point sampling](https://github.com/uowoolab/MOF-Diversity-Analysis/blob/main/farthest_point_sampling.py) of the desired descriptor vector. Details regarding the order in which the crystal structures are sampled are provided (subsets/sampling_details)if further subsampling is required.
+Calculated properties and information related to the structure processing can be found in the attached, identical excel worksheet (mosaec-db.xlsx) and csv (mosaec-db.csv). Additional properties will be found in the `misc_data` directory, such as a full record of the structure duplicate data.
+
+### Scripts
+
+Subsets of MOSAEC-DB are arranged according to common conventions of porosity in prior databases, as well as a diverse sampling of several chemical and geometric descriptors (denoted as * in the directory structure). Sampling was achieved using [farthest point sampling](https://github.com/uowoolab/MOF-Diversity-Analysis/blob/main/farthest_point_sampling.py) of the desired descriptor vector. Details regarding the order in which the crystal structures are sampled are provided (subsets/sampling_details) if further sub-sampling is required.
 
 ```
 python get_subset.py ../subsets/______.txt
 ```
 
-Calculated properties and information related to the structure processing can be found in the attached, identical excel worksheet (mosaec-db.xlsx) and csv (mosaec-db.csv).
-
-Crystal structures that were unchanged by the database construction protocol due to their lack of solvent are outlined in corresonding text files (.gcd). Access to these structures is subject to the users' CSD license status, however the computation ready structure can be regenerated by applying the provided structure processing codes to the relevant CSD REFCODES. This script makes use of a [CSD-Cleaner](https://github.com/uowoolab/CSD-cleaner) code that requires the CSD Python API and pymatgen packages.
+Crystal structures that were unchanged by the database construction protocol due to their lack of solvent are outlined in corresponding text files (.gcd). Access to these structures is subject to the users' CSD license status, however the computation ready structure can be regenerated by applying the provided structure processing codes to the relevant CSD REFCODES. This script makes use of a [CSD-Cleaner](https://github.com/uowoolab/CSD-cleaner) code that requires the CSD Python API and pymatgen packages.
 
 ```
 python get_unchanged_mofs.py --remove_disorder
 ```
 
-Additionally, **experimental** functionality to regenerate the structure files containing partial atomic charges (REPEAT/MEPO-ML) is provided in these scripts. Consistency of these functions is subject to change with various versions of pymatgen and the CSD Python API, thus we cannot guarantee accuracy to the original, computed partial atomic charges. Testing was performed using Python 3.9.x, psd-python-api 3.1.0, and pymatgen 2024.5.31.
+Additionally, **experimental** functionality to regenerate the structure files containing partial atomic charges (REPEAT/MEPO-ML) is provided in these scripts. Consistency of these functions is subject to change with various versions of pymatgen and the CSD Python API, thus we cannot guarantee accuracy to the original, computed partial atomic charges. Testing was performed using Python 3.9.x, csd-python-api 3.1.0, and pymatgen 2024.5.31.
 
 ```
 python get_unchanged_mofs.py --remove_disorder --write_repeat --write_mepoml
 ```
 
 ## Updates
-Information regarding future updates and additions to the database will be outlined in the zenodo repository established at the time of publication.
+Information regarding future updates and additions to the database will be outlined in the [GitHub](https://github.com/uowoolab/MOSAEC-DB/blob/main/CHANGELOG.md) repository established at the time of publication.
 
 ## Licensing
 The [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/) applies to the utilization of the MOSAEC database. Follow the license guidelines regarding the use, sharing, adaptation, and attribution of this data.
@@ -88,3 +96,4 @@ Reach out to any of the following authors with any questions:
 Marco Gibaldi: marco.gibaldi@uottawa.ca
 
 Tom Woo: tom.woo@uottawa.ca
+
