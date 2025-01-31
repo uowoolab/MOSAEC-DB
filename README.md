@@ -1,6 +1,6 @@
 #  MOSAEC Database (v1.0.0-release)
 
-[![Zenodo](https://flat.badgen.net/static/Zenodo/10.5281%2Fzenodo.14025238/red/)](https://doi.org/10.5281/zenodo.14025238)
+[![Zenodo](https://flat.badgen.net/static/Zenodo/10.5281%2Fzenodo.14780807/red/)](https://doi.org/10.5281/zenodo.14780807)
 [![Article](https://flat.badgen.net/static/Article/10.1039%2FD4SC07438F/nblue/)](https://doi.org/10.1039/D4SC07438F)
 ![Python](https://flat.badgen.net/static/Python/3.9%20|%203.11/green/)
 [![Formatter](https://flat.badgen.net/static/Code%20Format/black/black)](https://black.readthedocs.io/en/stable/)
@@ -18,7 +18,7 @@ Additionally, this repository will provide further information regarding the use
 - [Updates](CHANGELOG.md)
 
 # Download
-The MOSAEC-DB files, including all publicly-available crystal structures, scripts, and supplemental data, can be downloaded from the [zenodo](https://doi.org/10.5281/zenodo.14025238) repository.
+The MOSAEC-DB files, including all publicly-available crystal structures, scripts, and supplemental data, can be downloaded from the [zenodo](https://doi.org/10.5281/zenodo.14780807) repository.
 
 # Database Construction
 
@@ -97,7 +97,7 @@ python get_subset.py ../subsets/______.txt
 ```
 
 ## Updates
-Information regarding future updates and additions to the database will be outlined in the [zenodo](https://doi.org/10.5281/zenodo.14025238) record.
+Information regarding future updates and additions to the database will be outlined in the [GitHub](CHANGELOG.md) repository established at the time of publication.
 
 ## Licensing
 The [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/) applies to the utilization of the MOSAEC database. Follow the license guidelines regarding the use, sharing, adaptation, and attribution of this data.

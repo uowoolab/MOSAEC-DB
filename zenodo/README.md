@@ -1,6 +1,6 @@
 # MOSAEC Database (v1.0.0-release)
 
-[![Zenodo](https://flat.badgen.net/static/Zenodo/10.5281%2Fzenodo.14025238/red/)](https://doi.org/10.5281/zenodo.14025238)
+[![Zenodo](https://flat.badgen.net/static/Zenodo/10.5281%2Fzenodo.14780807/red/)](https://doi.org/10.5281/zenodo.14780807)
 [![Article](https://flat.badgen.net/static/Article/10.1039%2FD4SC07438F/nblue/)](https://doi.org/10.1039/D4SC07438F)
 
 <p align="center">
@@ -10,7 +10,7 @@
 MOSAEC-DB consists of 124k+ metal-organic framework (MOF) and coordination polymer crystallographic information files (.cif) processed for atomistic simulations. This database contains solely experimental crystal structures derived from the Cambridge Structural Database (CSD) which have been processed by novel solvent removal (SAMOSA) and error analysis (MOSAEC) tools.
 
 ## Download
-The MOSAEC-DB files, including all publicly-available crystal structures, file management scripts, and supplemental data, can be downloaded from the [zenodo](https://doi.org/10.5281/zenodo.14025238) record.
+The MOSAEC-DB files, including all publicly-available crystal structures, file management scripts, and supplemental data, can be downloaded from the [zenodo](https://doi.org/10.5281/zenodo.14780807) record.
 
 Additional scripts used in the construction and analysis of MOSAEC-DB, as well as general database use information, are available in a [GitHub](https://github.com/uowoolab/MOSAEC-DB) repository. 
 
