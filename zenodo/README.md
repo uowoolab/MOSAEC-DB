@@ -74,7 +74,7 @@ Crystal structures that were unchanged by the database construction protocol due
 python get_unchanged_mofs.py --remove_disorder
 ```
 
-Additionally, **experimental** functionality to regenerate the structure files containing partial atomic charges (REPEAT/MEPO-ML) is provided in these scripts. Consistency of these functions is subject to change with various versions of pymatgen and the CSD Python API, thus we cannot guarantee accuracy to the original, computed partial atomic charges. Testing was performed using Python 3.9.x, csd-python-api 3.1.0, and pymatgen 2024.5.31.
+Additionally, **experimental** functionality to regenerate the structure files containing partial atomic charges (REPEAT/MEPO-ML) is provided in these scripts. Consistency of these functions is subject to change with various versions of pymatgen and the CSD Python API, thus we cannot guarantee accuracy to the original, computed partial atomic charges. Testing was performed using Python 3.9.x, csd-python-api 3.1.0, and pymatgen 2024.5.31. Check the GitHub repository before using these scripts to ensure you are using the most up-to-date versions possible.
 
 ```
 python get_unchanged_mofs.py --remove_disorder --write_repeat --write_mepoml
