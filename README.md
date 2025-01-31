@@ -1,7 +1,8 @@
-##  MOSAEC Database (v1.0.0-release)
+#  MOSAEC Database (v1.0.0-release)
 
-[![Zenodo](https://flat.badgen.net/static/ZENODO/10.5281%2Fzenodo.14025238/red/)](https://doi.org/10.5281/zenodo.14025238)
-[![PREPRINT](https://flat.badgen.net/static/PREPRINT/10.26434%2Fchemrxiv-2024-zmq13/nblue/)](https://doi.org/10.26434/chemrxiv-2024-zmq13)
+[![Zenodo](https://flat.badgen.net/static/Zenodo/10.5281%2Fzenodo.14025238/red/)](https://doi.org/10.5281/zenodo.14025238)
+[![Preprint](https://flat.badgen.net/static/Preprint/10.26434%2Fchemrxiv-2024-zmq13/nblue/)](https://doi.org/10.26434/chemrxiv-2024-zmq13)
+[![Article](https://flat.badgen.net/static/Article/10.1039%2Fd4sc07438f/nblue/)](https://doi.org/10.1039/d4sc07438f)
 ![Python](https://flat.badgen.net/static/Python/3.9%20|%203.11/green/)
 [![Formatter](https://flat.badgen.net/static/Code%20Format/black/black)](https://black.readthedocs.io/en/stable/)
 
@@ -11,7 +12,11 @@
 
 MOSAEC-DB is a database of metal-organic framework (MOF) and coordination polymer crystallographic information files (.cif) processed for atomistic simulations. 
 
-This repository collects information relating to the software applied during database construction, validation, and analysis.
+This repository collects the software applied during database construction, validation, and analysis.
+
+Additionally, this repository will provide further information regarding the use of the database and changes to the database: 
+- [Frequently Asked Questions](FAQ.md)
+- [Updates](CHANGELOG.md)
 
 # Download
 The MOSAEC-DB files, including all publicly-available crystal structures, scripts, and supplemental data, can be downloaded from the [zenodo](https://doi.org/10.5281/zenodo.14025238) repository.
