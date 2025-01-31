@@ -1,8 +1,7 @@
 # MOSAEC Database (v1.0.0-release)
 
 [![Zenodo](https://flat.badgen.net/static/Zenodo/10.5281%2Fzenodo.14025238/red/)](https://doi.org/10.5281/zenodo.14025238)
-[![Preprint](https://flat.badgen.net/static/Preprint/10.26434%2Fchemrxiv-2024-zmq13/nblue/)](https://doi.org/10.26434/chemrxiv-2024-zmq13)
-[![Article](https://flat.badgen.net/static/Article/10.1039%2Fd4sc07438f/nblue/)](https://doi.org/10.1039/d4sc07438f)
+[![Article](https://flat.badgen.net/static/Article/10.1039%2FD4SC07438F/nblue/)](https://doi.org/10.1039/D4SC07438F)
 
 <p align="center">
     <img src="../misc/logo.png" alt="mosaecdb" width="500">
@@ -88,7 +87,7 @@ Information regarding future updates and additions to the database will be outli
 The [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/) applies to the utilization of the MOSAEC database. Follow the license guidelines regarding the use, sharing, adaptation, and attribution of this data.
 
 ## Citation
-Details relating to the appropriate citation will be updated at the time of publication in the README and zenodo record. A [preprint](https://doi.org/10.26434/chemrxiv-2024-zmq13) version of the article is available on ChemRxiv. Please contact the authors listed in the Contact section if you are unsure how to refer to this work in any publication.
+Please cite the following [article](https://doi.org/10.1039/D4SC07438F) when using MOSAEC-DB.
 
 ## Contact
 Reach out to any of the following authors with any questions:
