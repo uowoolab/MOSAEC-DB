@@ -1,6 +1,8 @@
 # MOSAEC Database (v1.0.0-release)
 
-[![Zenodo](https://flat.badgen.net/static/Zenodo/10.5281%2Fzenodo.14780807/red/)](https://doi.org/10.5281/zenodo.14780807)
+> [!WARNING]
+> ** The Database Zenodo record(s) will be taken down pending confirmation/amendments to the licensing agreement pertaining to the enclosed crystallographic data**
+
 [![Article](https://flat.badgen.net/static/Article/10.1039%2FD4SC07438F/nblue/)](https://doi.org/10.1039/D4SC07438F)
 
 <p align="center">
